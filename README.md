@@ -92,3 +92,12 @@ class YourTableViewController: CoreDataMultipleSourcesTableVC {
 
 }
 ````
+
+Future
+--
+
+- Allow Mix of NSFetchedResultController & Custom Static/Dynamic Arrays
+
+Help?
+--
+[@_imton](http://twitter.com/_imton) | [gaston@black.uy](mailto:gaston@black.uy) 
