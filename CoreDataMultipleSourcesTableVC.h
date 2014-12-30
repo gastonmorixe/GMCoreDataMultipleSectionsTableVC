@@ -29,7 +29,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/NSFetchedResultsController.h>
 
-@interface CoreDataMultipleSourcesTableVC : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface CoreDataMultipleSourcesTableVC: UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSArray *sectionTitles;
 @property (strong, nonatomic) NSArray *fetchedResultsControllers;
