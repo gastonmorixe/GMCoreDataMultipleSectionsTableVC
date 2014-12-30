@@ -27,6 +27,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import <CoreData/NSFetchedResultsController.h>
 
 @interface CoreDataMultipleSourcesTableVC : UITableViewController <NSFetchedResultsControllerDelegate>
 
