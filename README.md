@@ -4,6 +4,10 @@ GMCoreDataMultipleSectionsTableVC
 
 UITableViewControllers are backed most of the time with only one NSFetchedResultsController. This subclass allows you to have multiple NSFetchedResultsControllers, each under a section with a custom title.
 
+Example
+---
+![Example](https://cloud.githubusercontent.com/assets/637225/5578133/7d826e36-9008-11e4-8d47-be8c394fbbbe.png)
+
 How To Use It
 ---
 
