@@ -101,3 +101,8 @@ Future
 Help?
 --
 [@_imton](http://twitter.com/_imton) | [gaston@black.uy](mailto:gaston@black.uy) 
+
+Keywords
+- Multiple NSFechedResultsController in UITableViewController
+- Mix Static and Dynamic content on UITableViewController
+- Two NSFechedResultsController in UITableViewController
