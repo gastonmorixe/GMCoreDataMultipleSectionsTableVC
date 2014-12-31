@@ -126,7 +126,7 @@
     int sectionIndexComputed = (int)[self sectionForFetchedResultController:controller];
     NSArray* indexPathComputed = @[[NSIndexPath indexPathForRow:indexPath.row inSection:sectionIndexComputed]];
     NSArray* newIndexPathComputed = (newIndexPath)? @[[NSIndexPath indexPathForRow:newIndexPath.row inSection:sectionIndexComputed]] : nil;
-    NSLog(@" section %i path %i | section %i path %i  ", indexPath.section, indexPath.row, ((NSIndexPath*)indexPathComputed[0]).section, ((NSIndexPath*)indexPathComputed[0]).row );
+//    NSLog(@" section %i path %i | section %i path %i  ", indexPath.section, indexPath.row, ((NSIndexPath*)indexPathComputed[0]).section, ((NSIndexPath*)indexPathComputed[0]).row );
     switch(type)
     {
         case NSFetchedResultsChangeInsert:
