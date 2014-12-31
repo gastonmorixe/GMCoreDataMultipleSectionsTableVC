@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "GMCoreDataMultipleSectionsTableVC"
-  s.version          = "0.1.2"
+  s.version          = "0.1.3"
   s.summary          = "UITableViewController subclass backed by multiple NSFetchedResultsControllers"
   s.description  = <<-DESC
 	UITableViewControllers are backed most of the time with only one NSFetchedResultsController. This subclass allows you to have multiple NSFetchedResultsControllers, each under a section with a custom title.
