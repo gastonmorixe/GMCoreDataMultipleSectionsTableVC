@@ -120,12 +120,13 @@
       newIndexPath:(NSIndexPath *)newIndexPath
 {
     int sectionIndexComputed = (int)[self sectionForFetchedResultController:controller];
-    NSArray* indexPathComputed = @[[NSIndexPath indexPathForRow:newIndexPath.row inSection:sectionIndexComputed]];
-    
+    NSArray* indexPathComputed = @[[NSIndexPath indexPathForRow:indexPath.row inSection:sectionIndexComputed]];
+    NSArray* newIndexPathComputed = (newIndexPath)? @[[NSIndexPath indexPathForRow:newIndexPath.row inSection:sectionIndexComputed]] : nil;
+    NSLog(@" section %i path %i | section %i path %i  ", indexPath.section, indexPath.row, ((NSIndexPath*)indexPathComputed[0]).section, ((NSIndexPath*)indexPathComputed[0]).row );
     switch(type)
     {
         case NSFetchedResultsChangeInsert:
-            [self.tableView insertRowsAtIndexPaths:indexPathComputed
+            [self.tableView insertRowsAtIndexPaths:newIndexPathComputed
                                   withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
             
@@ -142,7 +143,7 @@
         case NSFetchedResultsChangeMove:
             [self.tableView deleteRowsAtIndexPaths:indexPathComputed
                                   withRowAnimation:UITableViewRowAnimationAutomatic];
-            [self.tableView insertRowsAtIndexPaths:indexPathComputed
+            [self.tableView insertRowsAtIndexPaths:newIndexPathComputed
                                   withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
     }
