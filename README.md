@@ -97,6 +97,7 @@ Future
 --
 
 - Allow Mix of NSFetchedResultController & Custom Static/Dynamic Arrays
+- Allow NSFetchedResultsController with multiple sections and merge all
 
 Help?
 --
