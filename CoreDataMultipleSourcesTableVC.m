@@ -119,6 +119,10 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
+    if ((indexPath && indexPath.section > 0) || (newIndexPath && newIndexPath.section > 0)) {
+        return;
+    }
+    
     int sectionIndexComputed = (int)[self sectionForFetchedResultController:controller];
     NSArray* indexPathComputed = @[[NSIndexPath indexPathForRow:indexPath.row inSection:sectionIndexComputed]];
     NSArray* newIndexPathComputed = (newIndexPath)? @[[NSIndexPath indexPathForRow:newIndexPath.row inSection:sectionIndexComputed]] : nil;
