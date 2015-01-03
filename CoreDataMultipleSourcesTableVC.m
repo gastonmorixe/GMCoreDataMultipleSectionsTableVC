@@ -93,23 +93,27 @@
            atIndex:(NSUInteger)sectionIndex
      forChangeType:(NSFetchedResultsChangeType)type
 {
-    int sectionIndexComputed = (int)[self sectionForFetchedResultController:controller];
     
-    switch(type)
-    {
-        case NSFetchedResultsChangeInsert:
-            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndexComputed]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndexComputed]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
-            break;
-        default:
-            NSLog(@"Wow, this is not suppoused to be happnening.");
-            break;
-    }
+
+    return;
+//    
+//    int sectionIndexComputed = (int)[self sectionForFetchedResultController:controller];
+//    
+//    switch(type)
+//    {
+//        case NSFetchedResultsChangeInsert:
+//            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndexComputed]
+//                          withRowAnimation:UITableViewRowAnimationAutomatic];
+//            break;
+//            
+//        case NSFetchedResultsChangeDelete:
+//            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndexComputed]
+//                          withRowAnimation:UITableViewRowAnimationAutomatic];
+//            break;
+//        default:
+//            NSLog(@"Wow, this is not suppoused to be happnening.");
+//            break;
+//    }
 }
 
 
@@ -119,14 +123,14 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-    if ((indexPath && indexPath.section > 0) || (newIndexPath && newIndexPath.section > 0)) {
+    if (indexPath.section > 0 || newIndexPath.section > 0) {
         return;
     }
     
     int sectionIndexComputed = (int)[self sectionForFetchedResultController:controller];
     NSArray* indexPathComputed = @[[NSIndexPath indexPathForRow:indexPath.row inSection:sectionIndexComputed]];
     NSArray* newIndexPathComputed = (newIndexPath)? @[[NSIndexPath indexPathForRow:newIndexPath.row inSection:sectionIndexComputed]] : nil;
-//    NSLog(@" section %i path %i | section %i path %i  ", indexPath.section, indexPath.row, ((NSIndexPath*)indexPathComputed[0]).section, ((NSIndexPath*)indexPathComputed[0]).row );
+    
     switch(type)
     {
         case NSFetchedResultsChangeInsert:
