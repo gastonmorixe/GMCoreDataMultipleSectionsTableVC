@@ -46,7 +46,9 @@
         if (error){
             NSLog(@"[%@ %@] %@ (%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [error localizedDescription], [error localizedFailureReason]);
         }
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:[self sectionForFetchedResultController:fetchedResultsController]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        if (fetchedResultsController.fetchedObjects.count > 0) {
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:[self sectionForFetchedResultController:fetchedResultsController]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
     }
 }
 
@@ -94,9 +96,8 @@
      forChangeType:(NSFetchedResultsChangeType)type
 {
     
-
     return;
-//    
+
 //    int sectionIndexComputed = (int)[self sectionForFetchedResultController:controller];
 //    
 //    switch(type)
@@ -123,6 +124,7 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
+    
     if (indexPath.section > 0 || newIndexPath.section > 0) {
         return;
     }
